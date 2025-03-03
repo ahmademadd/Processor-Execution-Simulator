@@ -1,7 +1,7 @@
 # Processor Execution Simulator
 
 ## Introduction
-The **Processor Execution Simulator** is a multithreaded simulation of processor execution for tasks. It models a synchronized set of processors executing tasks based on priority and execution time. The simulator processes input from a text file describing tasks and outputs a detailed execution report.
+The **Processor Execution Simulator** is a multithreaded simulation of processor execution for tasks. It models a synchronized set of processors executing tasks based on priority and execution time. The simulator processes input from a text file describing tasks and outputs a detailed cycle-by-cycle execution report.
 
 ## Features
 - Fixed number of processors throughout the simulation.
@@ -43,11 +43,11 @@ Each line in the input file represents a task with three space-separated integer
 ```
 
 ## Output
-The simulator prints a **detailed report** to the console, showing key events:
+The simulator prints a **detailed cycle-by-cycle report** to the console, showing key events:
 - **Task Creation:** When a task enters the queue.
 - **Task Assignment:** When a task starts execution on a processor.
 - **Task Completion:** When a task finishes execution.
-- **Processor State:** Which tasks are running on which processors.
+- **Processor State:** Idle processors and which tasks are running on which processors.
 
 #### **Example Output**
 ```
