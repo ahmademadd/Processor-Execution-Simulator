@@ -1,5 +1,10 @@
 # Processor Execution Simulator
 
+_By Ahmad Emad_  
+- **YouTube Video**: [Watch Here](https://youtu.be/2ebH247v2pE)  
+- **Documentation**: [Click Here](Processor-Execution-Simulator-Documentation.pdf).
+- **Email**: [ahmademad995.ae@gmail.com](mailto:ahmademad995.ae@gmail.com)
+
 ## Introduction
 The **Processor Execution Simulator** is a multithreaded simulation of processor execution for tasks. It models a synchronized set of processors executing tasks based on priority and execution time. The simulator processes input from a text file describing tasks and outputs a detailed cycle-by-cycle execution report.
 
