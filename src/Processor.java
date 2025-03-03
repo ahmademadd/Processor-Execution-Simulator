@@ -2,7 +2,8 @@ public class Processor extends Thread implements Comparable<Processor> {
     private final String id;
     private Task currentTask;
     private final Clock clock = Clock.getInstance();
-    private boolean available = true;
+    private volatile boolean available = true;
+    private int lastCycle = 1;
 
     Processor(String id) {
         this.id = id;
@@ -11,11 +12,16 @@ public class Processor extends Thread implements Comparable<Processor> {
     @Override
     public void run() {
         while (clock.isAlive()) {
+            if (available && clock.getCurrentCycle() > lastCycle) {
+                System.out.println("Processor '" + id + "' is idle at cycle 'C" + lastCycle + "'");
+                lastCycle = clock.getCurrentCycle();
+            }
             if (!available) {
                 System.out.println("Processor '" + id + "' is executing task '" + currentTask.getId() + "' at cycle 'C" + clock.getCurrentCycle() + "'");
                 executing();
                 System.out.println("Processor '" + id + "' finished executing task '" + currentTask.getId() + "' at cycle 'C" + clock.getCurrentCycle() + "'");
                 available = true;
+                lastCycle = clock.getCurrentCycle();
             }
         }
     }
